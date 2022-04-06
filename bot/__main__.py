@@ -68,14 +68,14 @@ def start(update, context):
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-message.reply_photo(photo=poster, caption=This bot can mirror all your links to Google Drive!
+message.reply_photo(photo=https://telegra.ph/file/767c2f2a99cbc37587b28.jpg, caption=This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 )
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
         sendMarkup(
-            'message.reply_photo(photo=poster, caption=Oops! not a Authorized user.\nPlease join our Channel.\nOr Host Your Own Bot Using My Repo).',
+            'message.reply_photo(photo=https://telegra.ph/file/767c2f2a99cbc37587b28.jpg, caption=Oops! not a Authorized user.\nPlease join our Channel.\nOr Host Your Own Bot Using My Repo).',
             context.bot,
             update,
             reply_markup,
