@@ -68,7 +68,7 @@ def start(update, context):
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-<img src="./LOCAL/Kamlimere.jpg"> \nThis bot can mirror all your links to Google Drive!
+src="./LOCAL/Kamlimere.jpg"\nThis bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
