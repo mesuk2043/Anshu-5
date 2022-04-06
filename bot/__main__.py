@@ -75,7 +75,6 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN)
     
-    )
 
 def restart(update, context):
     restart_message = sendMessage("Restarting, Please wait!", context.bot, update)
