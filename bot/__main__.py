@@ -9,9 +9,9 @@ import psutil
 from datetime import datetime
 from bot.helper.ext_utils.telegraph_helper import telegraph
 from pyrogram import idle
-from telegram import InlineKeyboardMarkup
+from telegram import InlineKeyboardMarkup, ParseMode, InlineKeyboardButton
 from telegram.ext import CommandHandler
-from bot import IGNORE_PENDING_REQUESTS, app, bot, botStartTime, dispatcher, updater, IS_VPS
+from bot import IGNORE_PENDING_REQUESTS, app, bot, botStartTime, dispatcher, updater, IS_VPS, IMAGE_URL
 from bot.helper.ext_utils import fs_utils
 from bot.helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from bot.helper.telegram_helper.bot_commands import BotCommands
@@ -37,8 +37,7 @@ from bot.modules import (  # noqa
     speedtest,
     count,
 )
-
-
+now=datetime.now(pytz.timezone('Asia/Kolkata'))
 
 def stats(update, context):
     currentTime = get_readable_time(time.time() - botStartTime)
