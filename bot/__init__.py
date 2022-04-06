@@ -485,6 +485,10 @@ try:
     IS_VPS = IS_VPS.lower() == 'true'
 except KeyError:
     IS_VPS = False
+try:
+    IMAGE_URL = getConfig('IMAGE_URL')
+except KeyError: 
+    IMAGE_URL = 'https://telegra.ph/file/767c2f2a99cbc37587b28.jpg'
 PORT = os.environ.get('PORT', SERVER_PORT)
 web = subprocess.Popen([f"gunicorn wserver:start_server --bind 0.0.0.0:{PORT} --worker-class aiohttp.GunicornWebWorker"], shell=True)
 alive = subprocess.Popen(["python3", "alive.py"])
