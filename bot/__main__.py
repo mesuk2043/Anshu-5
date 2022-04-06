@@ -75,14 +75,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN)
     
-        sendMarkup(start_string, context.bot, update, reply_markup)
-    else:
-        sendMarkup(
-            'Oops! not a Authorized user.\nPlease join our Channel.\nOr Host Your Own Bot Using My Repo).',
-            context.bot,
-            update,
-            reply_markup,
-        )
+    )
 
 def restart(update, context):
     restart_message = sendMessage("Restarting, Please wait!", context.bot, update)
