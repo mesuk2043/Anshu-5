@@ -78,10 +78,10 @@ def chat_list(update, context):
 
 
 def repo(update, context):
-    button = [
-    [InlineKeyboardButton("Movies Group", url=f"https://t.me/MOVIES_AND_SERIES_REQUESTING")],
-    [InlineKeyboardButton("Updates Channel", url=f"https://t.me/INDIAHDM0VIES")]]
-    reply_markup = InlineKeyboardMarkup(button)
+    buttons = button_build.ButtonMaker()
+    buttons.buildbutton("Movies Group", "https://t.me/MOVIES_AND_SERIES_REQUESTING")
+    buttons.buildbutton("Updates Channel", "https://t.me/INDIAHDM0VIES")
+    reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     update.effective_message.reply_photo(IMAGE_URL, reply_markup=reply_markup)
     
 def restart(update, context):
