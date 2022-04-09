@@ -1,3 +1,1 @@
 # Bhag sala
-
-u
