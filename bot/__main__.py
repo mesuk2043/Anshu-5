@@ -186,7 +186,7 @@ def bot_help(update, context):
 /{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive.
 '''
     help = telegraph.create_page(
-            title='Harsh Mirror Help',
+            title='Anshu Mirror Help',
             content=help_string_telegraph,
         )["path"]
     button = button_build.ButtonMaker()
