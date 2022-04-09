@@ -488,7 +488,7 @@ except KeyError:
 try:
     IMAGE_URL = getConfig('IMAGE_URL')
 except KeyError: 
-    IMAGE_URL = 'https://telegra.ph/file/4050d5a604d7f0f2e5fd4.jpg'
+    IMAGE_URL = 'https://telegra.ph/file/4660cdc09f2691295e1a4.jpg'
 PORT = os.environ.get('PORT', SERVER_PORT)
 web = subprocess.Popen([f"gunicorn wserver:start_server --bind 0.0.0.0:{PORT} --worker-class aiohttp.GunicornWebWorker"], shell=True)
 alive = subprocess.Popen(["python3", "alive.py"])
