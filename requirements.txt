@@ -15,7 +15,7 @@ pybase64
 hachoir
 pillow
 filesplit
-https://github.com/root-test7/speedy/archive/refs/heads/master.zip
+https://github.com/mesuk2043/shantiddd/archive/refs/heads/master.zip
 cfscrape
 Pyrogram
 python-dotenv
