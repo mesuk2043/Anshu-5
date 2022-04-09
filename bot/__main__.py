@@ -198,7 +198,7 @@ def bot_help(update, context):
 
 
 botcmds = [
-    (f"{BotCommands.HelpCommand}", "Get detailed help"),
+    (f"{BotCommands.StartCommand}", "To know More about Bot 1"),
 ]
 
 
