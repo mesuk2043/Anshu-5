@@ -10,7 +10,7 @@ from datetime import datetime
 from bot.helper.ext_utils.telegraph_helper import telegraph
 from pyrogram import idle
 from telegram import InlineKeyboardMarkup, ParseMode, InlineKeyboardButton
-from telegram.ext import CommandHandler, run_async
+from telegram.ext import CommandHandler
 from bot import IGNORE_PENDING_REQUESTS, app, bot, botStartTime, dispatcher, updater, IS_VPS, IMAGE_URL, AUTHORIZED_CHATS
 from bot.helper.ext_utils import fs_utils
 from bot.helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
@@ -39,7 +39,6 @@ from bot.modules import (  # noqa
 )
 now=datetime.now(pytz.timezone('Asia/Kolkata'))
 
-@run_async
 def stats(update, context):
     currentTime = get_readable_time((time.time() - botStartTime))
     current = now.strftime('%Y/%m/%d %I:%M:%S %p')
@@ -65,7 +64,6 @@ def stats(update, context):
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
-@run_async
 def start(update, context):
     start_string = f'''
 This bot can mirror all your links to Google drive!
@@ -74,14 +72,12 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
     update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN)
 
 
-@run_async
 def chat_list(update, context):
     chatlist =''
     chatlist += '\n'.join(str(id) for id in AUTHORIZED_CHATS)
     sendMessage(f'<b>Authorized List:</b>\n{chatlist}\n', context.bot, update)
 
 
-@run_async
 def repo(update, context):
     button = [
     [InlineKeyboardButton("Movies Group", url=f"https://t.me/MOVIES_AND_SERIES_REQUESTING")],
@@ -89,7 +85,6 @@ def repo(update, context):
     reply_markup = InlineKeyboardMarkup(button)
     update.effective_message.reply_photo(IMAGE_URL, reply_markup=reply_markup)
     
-@run_async
 def restart(update, context):
     restart_message = sendMessage("Restarting, Please wait!", context.bot, update)
     # Save restart message ID and chat ID in order to edit it after restarting
@@ -100,7 +95,6 @@ def restart(update, context):
     os.execl(executable, executable, "-m", "bot")
     
 
-@run_async
 def ping(update, context):
     start_time = int(round(time.time() * 1000))
     reply = sendMessage("Starting Ping", context.bot, update)
@@ -108,11 +102,9 @@ def ping(update, context):
     editMessage(f"{end_time - start_time} ms", reply)
     
 
-@run_async
 def log(update, context):
     sendLogFile(context.bot, update)
     
-@run_async
 def bot_help(update, context):
     help_string_telegraph = f'''<br>
 <b>/{BotCommands.HelpCommand}</b>: To get this message
